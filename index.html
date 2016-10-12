@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Turbine Clicker</title>
+</head>
+<body>
+    <ul data-bind="foreach: turbineList">
+           <li data-bind="click: $parent.switchTurbine, text: name"></li>    
+    </ul>
+    
+    <div data-bind="with: currentTurbine">
+
+        <h2 data-bind="text: name"></h2>
+        <div data-bind="text: clickCount"></div>
+        <div data-bind="text: level"></div>
+        <img src="" alt="gas turbine" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+        
+        <ul data-bind="foreach: synonyms">
+           <li data-bind="text: syn"></li>
+        </ul>
+
+    </div>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
